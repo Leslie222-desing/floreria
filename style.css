@@ -1,0 +1,463 @@
+/*estilo de index*/
+
+/* Tipografía base */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fce2ff;
+  color: #333;
+}
+
+/* Header con tonos pastel */
+/* Header pastel elegante y flotante */
+header {
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+  background: rgba(208, 164, 179, 0.8); /* fondo pastel semi-transparente */
+  backdrop-filter: blur(6px); /* efecto vidrio */
+  -webkit-backdrop-filter: blur(6px);
+  padding: 15px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeSlideDown 0.8s ease-in-out;
+  transition: background 0.4s ease;
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  font-family: 'Poppins', sans-serif;
+  color: #d63384;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+/* Menú pastel animado */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #d63384;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1em;
+  position: relative;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #d63384;
+  transition: width 0.4s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+/* Banner */
+.banner {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('img/fondo1.jpg'); /* Usa tu propia imagen */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden;
+}
+
+.banner h2 {
+  font-family: 'Times New Roman', serif;
+  font-size: 6.2em;
+  font-weight: normal;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 2s ease-in-out;
+  z-index: 2;
+  margin: 0;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Flores animadas */
+/* Flores animadas más naturales y variadas */
+.flowers-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Añadimos diferentes tamaños, posiciones y velocidades */
+.flower {
+  position: absolute;
+  background-image: url('img/flor.png');
+  background-size: cover;
+  opacity: 0.7;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* Valores por defecto, serán sobreescritos para cada flor */
+  width: 40px;
+  height: 40px;
+  animation-name: floatDown;
+}
+
+/* Varias clases para animar flores con diferentes velocidades, tamaños y delays */
+.flower.size-small {
+  width: 25px;
+  height: 25px;
+  opacity: 0.5;
+  animation-duration: 12s;
+}
+
+.flower.size-medium {
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+  animation-duration: 18s;
+}
+
+.flower.size-large {
+  width: 55px;
+  height: 55px;
+  opacity: 0.9;
+  animation-duration: 25s;
+}
+
+.flower.delay-1 {
+  animation-delay: 0s;
+}
+
+.flower.delay-2 {
+  animation-delay: 4s;
+}
+
+.flower.delay-3 {
+  animation-delay: 8s;
+}
+
+.flower.delay-4 {
+  animation-delay: 12s;
+}
+
+/* Animación mejorada con movimiento horizontal y rotación */
+@keyframes floatDown {
+  0% {
+    transform: translateX(0) translateY(-60px) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(30px) translateY(200px) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-30px) translateY(350px) rotate(270deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(0) translateY(500px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+/* Sección de categorías */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 2em;
+  background: linear-gradient(135deg, #fff0f5 0%, #fce2ff 100%);
+}
+
+.categories a.category {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #fce4ec;
+  background-color: #fff0f5;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  box-shadow: 0 2px 6px rgba(214, 51, 132, 0.1);
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+}
+
+.categories a.category:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.categories a.category:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.categories a.category:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.categories a.category:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(214, 51, 132, 0.15);
+  background-color: #ffe3ef;
+}
+
+/* Repite para mantener la compatibilidad */
+.category {
+  border: 1px solid #f3bbcd;
+  background-color: #fff0f5;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.category:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.category:hover img {
+  transform: scale(1.05);
+}
+
+.category h3 {
+  text-align: center;
+  padding: 1em;
+  color: #d63384;
+  font-weight: 600;
+  font-size: 1.2em;
+  background-color: #fff8fc;
+  transition: color 0.3s;
+}
+
+.category:hover h3 {
+  color: #b03060;
+}
+
+
+
+
+/* Footer pastel */
+footer {
+  background-color: #fce4ec;
+  text-align: center;
+  padding: 2em;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Sección de contacto */
+.contact-section {
+  background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+  padding: 4em 2em;
+  border-top: 4px dashed #f8bbd0;
+  border-bottom: 4px dashed #f8bbd0;
+  position: relative;
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  color: #d63384;
+  font-size: 2.2em;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.contact-section form {
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  background: url('img/fondo.jpg') no-repeat center center / cover;
+  padding: 2em;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(248, 187, 208, 0.4);
+  animation: fadeSlideUp 1s ease;
+
+  backdrop-filter: brightness(1.1);
+  position: relative;
+  z-index: 1;
+}
+
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-section label {
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #ffd9e8;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 12px 14px;
+  border: 1.5px solid #f8bbd0;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #fffdfd;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  outline: none;
+  border-color: #ec407a;
+  box-shadow: 0 0 8px rgba(236, 64, 122, 0.3);
+}
+
+.contact-section textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-section button {
+  margin-top: 10px;
+  background-color: #ec407a;
+  color: white;
+  padding: 0.9em;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(236, 64, 122, 0.2);
+}
+
+.contact-section button:hover {
+  background-color: #d81b60;
+  transform: scale(1.05);
+}
+
+
+/*estilo de los apartados*/
+.section-wrapper {
+  background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+  padding: 4em 2em;
+  position: relative;
+  border-top: 4px dashed #f8bbd0;
+  border-bottom: 4px dashed #f8bbd0;
+}
+
+.section-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background: url('img/fondo-section.jpg') no-repeat center center / cover;
+  padding: 2.5em;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(248, 187, 208, 0.3);
+  backdrop-filter: brightness(1.05);
+  animation: fadeSlideUp 1s ease;
+  position: relative;
+  z-index: 1;
+  color: #5a2a41;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-content h2 {
+  text-align: center;
+  color: #d63384;
+  margin-bottom: 1em;
+  font-size: 2em;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.section-content p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: #6a1b49;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
